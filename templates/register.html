@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="div-header">
+        <a class="brand-logo" href="home.html"><img src="assets/brand_logo.jpg" alt="brand logo"></a>
+        <h2 class="brand-name">Company XYZ</h2>
+        <div class="nav-link-container">
+            <a class="nav-link" href="register.html">Register</a>
+            <a class="nav-link" href="login_page.html">Login</a>
+        </div>
+
+    </div>
+    <center>
+        <h1 style="margin-top:10px;">Register yourself to join</h1>
+        <div class="div-form">
+            <form action="home.html" method="POST">
+                <label for="email">Email</label><br>
+                <input type="email" name="email" placeholder="Your email goes here.."><br>
+                <label for="first_name">First Name</label><br>
+                <input type="text" name="first_name" placeholder="First Name"><br>
+                <label for="last_name">Last Name</label><br>
+                <input type="text" name="last_name" placeholder="Last Name"><br>
+                <label for="content">Content</label><br>
+                <input style="margin-top:6px; margin-bottom:10px;" type="radio" name="radio" value="basic"><label for="radio">Basic</label>
+                <input style="margin-left: 60px; margin-top:6px;" type="radio" name="radio" value="premium"><label for="radio">Premium</label><br>
+                <select name="occupation">
+                    <option disabled selected >Occupation</option>
+                    <option value="student" >Student</option>
+                    <option value="teacher">Teacher</option>
+                </select><br>
+                <input style="display: inline;" type="checkbox" name="t&c" value="t&c">
+                <p style="display: inline; color: #0c0d0eb6; font-size:medium;" checkbox">I agree to the &nbsp;<a style="color: #0c0d0eb6; padding:0px;" href="">Terms of Service</a>&nbsp; and <a style="color: #0c0d0eb6;" href="">Privacy Policy</a></p>
+                <input class="submit-button" type="submit" value="Register">
+            </form>
+        </div>
+        <div class="div-footer" >
+            <p>&copy; Copyright 1999-2021. All rights reserved.</p>
+        </div>
+    </center>
+    
+</body>
+</html>
