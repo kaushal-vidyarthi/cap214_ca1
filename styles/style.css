@@ -1,25 +1,27 @@
 * {
-    /* background-color: gold; */
+    /* background-color: #f0f4f8; */
     padding: 0px;
     margin: 0px;
-    color: #0c0d0eb6;
     box-sizing: border-box;
+    line-height: 1.1;
+    font-family: 'lato', 'sans-serif';
 }
+
 body{
-    background-color: gold;
+    background-color:#f0f0f0;
+    --text-color:#4b4949;
+    color: var(--text-color);
+    font-size: 15px;
 }
 div{
     padding: 15px;
 }
 /* ...........heading and paragraph...............*/
-h1,
-h2{
-    margin-bottom: 5px;
-}
 p{
-    font-family: 'Josefin Sans', sans-serif;
-    margin-bottom: 10px;
-    opacity: 70%;
+    line-height: 1.3em;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.62);
 }
 
 /*.................links..............*/
@@ -30,58 +32,59 @@ ul{
 }
 li{
     margin-left: 5px;
-    list-style-type: disc;
     padding-top:5px;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.13);
 }
-li:hover{
-    color: white ;
-    background-color: rgba(255, 187, 0, 0.589);
-}
-
 a{
-    padding:5px 40px 10px 0px;
+    color: var(--text-color);
+    padding:auto;
     text-decoration: none;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.030) ;
 }
 a:hover{
     color:black;
-    text-decoration: underline;
+    text-decoration:underline;
 }
-
 /*styling  page header....................................................*/
 
 /*header*/
 .div-header{
+    --brand-color: rgb(52 128 249 / 80%);
+    backdrop-filter: saturate(200%) blur(10px) brightness(100%);
+    background-color: var(--brand-color);
+    color:#fff;
     display: flex;
     width: 100%;
+    height: 65px;
     padding:15px;
     justify-content: center;
     align-items: center;
-    box-shadow: 2px 2px 10px 1px rgb(185, 159, 7);
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    position:sticky;
+    top:0;
+    bottom: auto;
+    z-index: 2;
 }
-.brand-logo{
-    padding: 0px !important;
-}
-.div-header img{
+
+.div-header > a > img{
     margin-inline-end: 10px;
     display: inline-block;
     max-width: 60px;
     max-height: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
-.div-header h2{
-    color: black;
-    font-size: 26px;
-    font-family: 'Architects Daughter', cursive;
+.brand-name{
     display: inline-block;
 }
-.div-header .nav-link-container{
+.div-header > .nav-link-container{
     margin-left: auto;
 }
 .nav-link{
     padding: 5px;
+    color: #fff;
     margin:5px;
+}
+.nav-link:hover{
+    color:rgba(255, 255, 255, 0.8);
 }
 
 
@@ -89,7 +92,7 @@ a:hover{
 
 /* .................Form.............................*/
 form{
-    margin: 10px;
+    align-items: center;
     font-family: 'Times New Roman';
     font-size: 18px;
 }
@@ -97,29 +100,30 @@ label{
     max-width:250px;
     position: absolute;
     z-index: 1;
-    color: #0c0d0e9c;
-    margin: 3px;
 }
 .div-form{
-    align-content: center;
+    background-color: #fff;
     text-align: left;
-    margin: 16px;
+    margin: 10px;
     max-width:350px;
     border-radius: 2px;
-    background-color: rgba(255, 217, 0, 0.26);
-    padding:24px;
-    border: 1px solid rgba(0, 0, 0, 0.050);
-    box-shadow: 10px 10px 10px 1px #746e6e44;
+    padding:36px;
+    box-shadow: 1px 1px 20px 1px #b3b2b24f;
 }
 input,select{
-    background-color: gold;
-    margin: 3px;
-    max-width:250px;
-    margin-bottom: 10px;
-    border: 1px solid gray;
-    padding: 0.6em 0.7em;
+    margin: 8px 0px 16px 0px;
+    width:100%;
+    max-width:350px;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    padding: 0.7em 0.7em;
     border-radius: 2px;
+    outline: none;
 }
+input:checked{
+    border: 1px solid red;
+    color: green;
+}
+
 
 input[type='text']
 {
@@ -132,11 +136,23 @@ input[type='password']{
     width:100%;
 }
 input[type='submit']{
+    cursor: pointer;
     width:100%;
+    padding: 0.8em 0.7em;
+    letter-spacing: 2px;
+    background-color: #fff;
+    color: var(--text-color);
+    border: 1.5px solid rgb(105 179 245 / 100%);
+    transition: background-color 400ms ease-out;
+    font-weight:400;
 }
 input:hover,select:hover{
     color: black;
-    border:1px solid black;
+    border:1px solid rgb(0, 135, 255, 0.5);
+}
+
+input:focus {
+    border: 1px solid rgba(255, 0, 0, 0.308);
 }
 
 ::placeholder{
@@ -144,40 +160,31 @@ input:hover,select:hover{
     visibility: hidden;
 }
 
-select{
-    color: #0c0d0eb6;
-    max-width:250px;
-    width: 100%;
-    margin: 3px;
-    margin-bottom: 10px;
-    background-color: gold;
-}
 #register-button{
-    color: rgb(95, 34, 34);
+    color: rgb(255, 255, 255);
     max-width:250px;
     width: 100%;
     margin-top: 15px;
 }
 .submit-button:hover{
-    border-color: red;
+    color:#fff;
+    font-weight: 500;
+    border: 1.5px solid rgb(105 200 255 / 100%);
+    background-color: rgb(105 179 245);
 }
-::-webkit-scrollbar {
-    display: none;
-}
-
 /* ..............annoucement page........................................*/
 
-.div-announcement{
-    padding:0px ;
-    margin: 0px;
-}
 
 .div-announcement-content{
     padding:0px 0px 15px 0px;
     margin:0px;
 }
 .announcement-heading{
-    font-size: 25px;
-    color: black;
-    opacity: 75%;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+::-webkit-scrollbar {
+    display: none;
 }
